@@ -18,7 +18,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o repayment-utility-service ./main.go
 
 ### Production Stage ###
-FROM alpine:3.16
+FROM alpine:3.18
 
 # Set the working directory inside the container
 WORKDIR /app
