@@ -19,6 +19,7 @@ steps:
               '--platform',
               'managed',
               '--allow-unauthenticated']
+    # set env vars
     env:
       - '_USER_SERVICE_URL_=user-service.mekar-test.xyz'
 
