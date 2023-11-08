@@ -9,7 +9,7 @@ LABEL company="PT Mekar Investama Sampoerna" reachMe="https://github.com/EchoEdy
 WORKDIR /go/src/app
 
 # Copy the Go modules manifests
-COPY go.mod go.sum ./
+COPY go.mod ./
 
 ### RUN INSTRUCTION (Build Stage) ###
 RUN go mod download && go mod tidy
