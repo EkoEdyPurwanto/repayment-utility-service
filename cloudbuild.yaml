@@ -20,6 +20,6 @@ steps:
               'managed',
               '--allow-unauthenticated']
     env:
-      - 'USER_SERVICE_URL=user-service.mekar-test.xyz'
+      - '_USER_SERVICE_URL=user-service.mekar-test.xyz'
 
 images: ['gcr.io/$PROJECT_ID/credit-scoring-service']

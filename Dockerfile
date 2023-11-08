@@ -30,7 +30,7 @@ RUN apk --no-cache add curl
 COPY --from=BUILD /go/src/app/repayment-utility-service .
 
 # Define environment variable for USER_SERVICE_URL
-ENV USER_SERVICE_URL=user-service.mekar-test.xyz
+ENV _USER_SERVICE_URL=user-service.mekar-test.xyz
 
 ### CMD INSTRUCTION (if container run) ###
 CMD ["./repayment-utility-service"]
