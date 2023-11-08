@@ -1,11 +1,11 @@
 steps:
   # build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/credit-scoring-service', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/repayment-utility-service', '.']
 
   # push the container image to container registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/credit-scoring-service']
+    args: ['push', 'gcr.io/$PROJECT_ID/repayment-utility-service']
 
   # deploy the container image to cloud run
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -13,7 +13,7 @@ steps:
               'deploy',
               'credit-scoring-service',
               '--image',
-              'gcr.io/$PROJECT_ID/credit-scoring-service',
+              'gcr.io/$PROJECT_ID/repayment-utility-service',
               '--region',
               'us-central1',
               '--platform',
@@ -22,4 +22,4 @@ steps:
     env:
       - '_USER_SERVICE_URL=user-service.mekar-test.xyz'
 
-images: ['gcr.io/$PROJECT_ID/credit-scoring-service']
+images: ['gcr.io/$PROJECT_ID/repayment-utility-service']
