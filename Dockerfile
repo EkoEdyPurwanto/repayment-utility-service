@@ -1,5 +1,5 @@
 ### Build Stage ###
-FROM golang:1.21.1-alpine3.16 AS BUILD
+FROM golang:1.21.1-alpine3.18 AS BUILD
 
 ### LABEL INSTRUCTION (hanya metadata) ###
 LABEL authors="eep"
