@@ -8,7 +8,7 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/credit-scoring-service']
 
   # deploy the container image to cloud run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
+  - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run',
               'deploy',
               'credit-scoring-service',
