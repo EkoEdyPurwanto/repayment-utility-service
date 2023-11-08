@@ -18,7 +18,7 @@ RUN go mod download && go mod tidy
 COPY . .
 
 ### RUN INSTRUCTION (Build Stage) ###
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o repayment-utility-service ./cmd/todolist-api/main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o repayment-utility-service ./main.go
 
 ### Production Stage ###
 FROM alpine:3.16
@@ -31,10 +31,9 @@ RUN apk --no-cache add curl
 
 # Copy only the necessary files from the build stage
 COPY --from=BUILD /go/src/app/repayment-utility-service .
-COPY --from=BUILD /go/src/app/internal/database/postgres/migrations/ ./internal/database/postgres/migrations/
 
-# Expose port 1234
-EXPOSE 1234
+# Define environment variable for USER_SERVICE_URL
+ENV USER_SERVICE_URL=user-service.mekar-test.xyz
 
 ### CMD INSTRUCTION (if container run) ###
-CMD ["./todoApp"]
+CMD ["./repayment-utility-service"]
