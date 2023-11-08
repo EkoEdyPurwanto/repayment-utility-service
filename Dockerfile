@@ -1,5 +1,5 @@
 ### Build Stage ###
-FROM golang:1.20.4-alpine3.16 AS BUILD
+FROM golang:1.21.1-alpine3.16 AS BUILD
 
 ### LABEL INSTRUCTION (hanya metadata) ###
 LABEL authors="eep"
@@ -10,9 +10,6 @@ WORKDIR /go/src/app
 
 # Copy the Go modules manifests
 COPY go.mod ./
-
-### RUN INSTRUCTION (Build Stage) ###
-RUN go mod download && go mod tidy
 
 ### Copy the source code into the container (build stage) ###
 COPY . .
