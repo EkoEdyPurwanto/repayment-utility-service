@@ -19,5 +19,7 @@ steps:
               '--platform',
               'managed',
               '--allow-unauthenticated']
+    env:
+      - '_USER_SERVICE_URL=user-service.mekar-test.xyz'
 
 images: ['gcr.io/$PROJECT_ID/credit-scoring-service']
