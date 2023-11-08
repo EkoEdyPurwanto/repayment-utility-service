@@ -11,7 +11,7 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run',
               'deploy',
-              'credit-scoring-service',
+              'repayment-utility-service',
               '--image',
               'gcr.io/$PROJECT_ID/repayment-utility-service',
               '--region',
